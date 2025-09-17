@@ -50,7 +50,7 @@ struct SettingsView: View {
 
     private var iconSettingsTab: some View {
         Form {
-            Section(header: Text("Current Icon")) {
+            Section(header: Text("Current Icon").font(.title2)) {
                 HStack {
                     switch appDelegate.currentIcon {
                     case .single(let symbol):
@@ -76,7 +76,7 @@ struct SettingsView: View {
                 }
             }
 
-            Section(header: Text("SF Symbol Settings")) {
+            Section(header: Text("SF Symbol Settings").font(.title2)) {
                 ColorPicker("Symbol Color", selection: $selectedColor)
                     .onChange(of: selectedColor) { oldValue, newColor in
                         if case .single(let symbol) = appDelegate.currentIcon {
@@ -91,7 +91,7 @@ struct SettingsView: View {
                 }
             }
 
-            Section(header: Text("Display Mode")) {
+          Section(header: Text("Display Mode").font(.title2)) {
                 Picker("Mode", selection: $selectedModeIndex) {
                     Text("Single").tag(0)
                     Text("Rotating").tag(1)
@@ -135,7 +135,8 @@ struct SettingsView: View {
             }
 
             Section(header: Text("Legacy Color Mapping")) {
-                Text("Send these commands via UDP to change to legacy colors:")
+                Text("Send these commands via UDP to change to legacy colors:").frame(maxWidth: 300)
+
                 VStack(alignment: .leading, spacing: 4) {
                     Text("• white, red, orange, yellow")
                     Text("• green, cyan, blue, purple")
@@ -153,14 +154,15 @@ struct SettingsView: View {
 
     private var networkSettingsTab: some View {
         Form {
-            Section(header: Text("UDP Configuration")) {
+            Section(header: Text("UDP Configuration").font(.title2)) {
                 HStack {
                     Text("Port:")
                     TextField("", value: .constant(appDelegate.udpPort), formatter: NumberFormatter())
-                        .disabled(true)
+                      .frame(maxWidth: 100)
+                      .disabled(true)
                     Text("(Set via ANYBAR_PORT environment variable)")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
+                      .font(.caption)
+                      .foregroundColor(.secondary)
                 }
 
                 HStack {
@@ -172,7 +174,7 @@ struct SettingsView: View {
                 }
             }
 
-            Section(header: Text("Usage")) {
+            Section(header: Text("Usage").font(.title2)) {
                 Text("Send UDP messages to port \(appDelegate.udpPort) to change the icon:")
                 VStack(alignment: .leading, spacing: 4) {
                     Text("• SF Symbol name (e.g., 'star.fill')")
@@ -208,7 +210,7 @@ struct SettingsView: View {
 
             Spacer()
 
-            Text("© 2024 AnyIconBar")
+            Text("© 2025 AnyIconBar")
                 .font(.caption)
                 .foregroundColor(.secondary)
         }

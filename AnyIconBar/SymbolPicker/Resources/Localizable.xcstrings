@@ -7,12 +7,12 @@
     "%.1fs" : {
 
     },
-    "%@ symbols (%@)" : {
+    "%@ symbols %@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "%1$@ symbols (%2$@)"
+            "value" : "%1$@ symbols %2$@"
           }
         }
       }

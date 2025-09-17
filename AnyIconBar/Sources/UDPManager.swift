@@ -5,10 +5,12 @@ class UDPManager {
     private var udpListener: NWListener?
     private let port: Int
     private let messageHandler: (String) -> Void
+    private let statusHandler: (Bool) -> Void
 
-    init(port: Int, messageHandler: @escaping (String) -> Void) {
+    init(port: Int, messageHandler: @escaping (String) -> Void, statusHandler: @escaping (Bool) -> Void) {
         self.port = port
         self.messageHandler = messageHandler
+        self.statusHandler = statusHandler
         setupUDPListener()
     }
 
@@ -26,8 +28,12 @@ class UDPManager {
                     switch state {
                     case .ready:
                         print("UDP listener ready on port \(self?.port ?? 0)")
+                        self?.statusHandler(true)
                     case .failed(let error):
                         print("UDP listener failed: \(error)")
+                        self?.statusHandler(false)
+                    case .cancelled:
+                        self?.statusHandler(false)
                     default:
                         break
                     }

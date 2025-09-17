@@ -66,7 +66,7 @@ struct SettingsView: View {
                                     .font(.system(size: 20))
                             }
                         }
-                        Text("\(symbols.count) symbols (\(modeDescription(mode)))")
+                      Text("\(symbols.count) symbols \(mode.label)")
                     case .image(let image):
                         Image(nsImage: image)
                             .resizable()
@@ -215,17 +215,6 @@ struct SettingsView: View {
         .padding()
         .tabItem {
             Label("About", systemImage: "info.circle")
-        }
-    }
-
-    private func modeDescription(_ mode: DisplayMode) -> String {
-        switch mode {
-        case .single:
-            return "single"
-        case .rotating:
-            return "rotating"
-        case .sideBySide:
-            return "side-by-side"
         }
     }
 }

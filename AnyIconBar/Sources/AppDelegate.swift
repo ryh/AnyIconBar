@@ -40,6 +40,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
 
     func applicationWillTerminate(_ notification: Notification) {
         udpManager?.stop()
+        isConnected = false
         touchBarManager?.cleanup()
     }
 
@@ -77,9 +78,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     }
 
     private func setupUDPManager() {
-        udpManager = UDPManager(port: udpPort) { [weak self] message in
+        udpManager = UDPManager(port: udpPort, messageHandler: { [weak self] message in
             self?.processMessage(message)
-        }
+        }, statusHandler: { [weak self] isConnected in
+            self?.isConnected = isConnected
+        })
     }
 
     private func setupTouchBarManager() {

@@ -124,23 +124,25 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             }
         } else {
             // Single symbol or legacy format
-            if let coloredSymbol = ColorUtilities.parseSymbolString(message) {
-                currentIcon = .single(symbol: coloredSymbol)
-            } else {
-                // Try to load as custom image
-                if let image = IconManager.loadCustomImage(named: message) {
-                    currentIcon = .image(image)
-                } else {
-                    currentIcon = .single(symbol: ColoredSymbol(name: "questionmark.circle.fill", color: .gray))
-                }
-            }
+            currentIcon = parseSingleIcon(message)
         }
 
         menuBarManager?.updateCurrentIcon(currentIcon, rotationIndex: currentRotationIndex)
         touchBarManager?.updateCurrentIcon(currentIcon, rotationIndex: currentRotationIndex)
     }
 
+    private func parseSingleIcon(_ message: String) -> IconType {
+        // Priority: custom image > symbol string > fallback
+        if let image = IconManager.loadCustomImage(named: message) {
+            return .image(image)
+        }
 
+        if let coloredSymbol = ColorUtilities.parseSymbolString(message) {
+            return .single(symbol: coloredSymbol)
+        }
+
+        return .single(symbol: ColoredSymbol(name: "questionmark.circle.fill", color: .gray))
+    }
 
     func startDisplayMode() {
         rotationTimer?.invalidate()

@@ -1,0 +1,192 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "(Set via ANYBAR_PORT environment variable)" : {
+
+    },
+    "%.1fs" : {
+
+    },
+    "%@ symbols (%@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ symbols (%2$@)"
+          }
+        }
+      }
+    },
+    "• 'quit' to terminate the app" : {
+
+    },
+    "• black, hollow, filled" : {
+
+    },
+    "• exclamation, question" : {
+
+    },
+    "• green, cyan, blue, purple" : {
+
+    },
+    "• Legacy color name (e.g., 'red')" : {
+
+    },
+    "• SF Symbol name (e.g., 'star.fill')" : {
+
+    },
+    "• white, red, orange, yellow" : {
+
+    },
+    "© 2024 AnyIconBar" : {
+
+    },
+    "A modern menubar icon indicator for macOS" : {
+
+    },
+    "AnyIconBar" : {
+
+    },
+    "cancel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キャンセル"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消"
+          }
+        }
+      }
+    },
+    "Current Icon" : {
+
+    },
+    "Custom Image" : {
+
+    },
+    "Display Mode" : {
+
+    },
+    "done" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完了"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "确定"
+          }
+        }
+      }
+    },
+    "Interval:" : {
+
+    },
+    "Legacy Color Mapping" : {
+
+    },
+    "Port:" : {
+
+    },
+    "Ported from AnyBar with SF Symbols support" : {
+
+    },
+    "remove_symbol" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove Symbol"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "シンボルを削除"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "移除符号"
+          }
+        }
+      }
+    },
+    "Rotating" : {
+
+    },
+    "search_placeholder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "検索"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "搜索"
+          }
+        }
+      }
+    },
+    "Send these commands via UDP to change to legacy colors:" : {
+
+    },
+    "Send UDP messages to port %@ to change the icon:" : {
+
+    },
+    "SF Symbol Settings" : {
+
+    },
+    "Side by Side" : {
+
+    },
+    "Single" : {
+
+    },
+    "Status:" : {
+
+    },
+    "UDP Configuration" : {
+
+    },
+    "Usage" : {
+
+    }
+  },
+  "version" : "1.0"
+}
